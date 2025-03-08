@@ -22,7 +22,10 @@ const listingSchema = new mongoose.Schema({
                 : v,
           }} ,
         
-    
+    // image: {  // ✅ Ensure this is NOT an ObjectId
+    //     url: String,
+    //     filename: String
+    // },
     
     price:
         Number,

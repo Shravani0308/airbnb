@@ -86,3 +86,10 @@ background-color: white;
     height: 30vh;
     /* width:30vh ; */
 }
+.show-img{
+    height: 30vh;
+}
+/* show route */
+.btns{
+    display: flex;
+}
