@@ -1,8 +1,9 @@
 const Joi = require('joi');
-const Listing = require('./models/listing');
+const Listing = require('./models/listing.js');
+const Review =require("./models/review.js")
 
 module.exports.listingSchema =Joi.object({
-    Listing:Joi.object().required({
+    listing:Joi.object().required({
         title:Joi.string().required(),
         description:Joi.string().required(),
         location:Joi.string().required(),
@@ -16,4 +17,4 @@ module.exports.reviewSchema =Joi.object({
        rating:Joi. number().required().min(1).max(5),
        comment:Joi.string().required()
     }).required()
-})
+});

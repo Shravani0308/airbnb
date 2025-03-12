@@ -50,15 +50,21 @@ body{
 }
 
 /* cards */
-.card{
+.listing-card{
     border: none !important;
-    margin-bottom:2rem ;
+    margin-bottom: 2rem;
+    
+}
+.listing-card .card {
+    border: none !important;
+    box-shadow: none !important;
 }
 .card-img-top{
    border-radius:1rem !important ; 
    width: 100% !important;
    object-fit: cover !important;
 }
+
 .card-body{
     padding:0 !important ;
 }
