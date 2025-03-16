@@ -1,6 +1,7 @@
 const mongoose =require("mongoose");
 const Review = require("./review.js");
 const review = require("./review.js");
+const { string } = require("joi");
 const Schema =mongoose.Schema;
 
 const listingSchema = new mongoose.Schema({
@@ -11,24 +12,26 @@ const listingSchema = new mongoose.Schema({
 
     description:String,
     image: {
-        filename:{
+        url:String,
+        filename:String,
+        // filename:{
         
-            type: String,
-        default:"listingimage"},
-        url:{type:String,
-            default:
-              "https://pixabay.com/photos/coast-landscape-nature-ocean-sea-1867704/",
-            set: (v) =>
-              v === ""
-                ? "https://pixabay.com/photos/coast-landscape-nature-ocean-sea-1867704/"
-                : v,
-          }} ,
+        //     type: String,
+        // default:"listingimage"},
+        // url:{type:String,
+        //     default:
+        //       "https://pixabay.com/photos/coast-landscape-nature-ocean-sea-1867704/",
+        //     set: (v) =>
+        //       v === ""
+        //         ? "https://pixabay.com/photos/coast-landscape-nature-ocean-sea-1867704/"
+        //         : v,
+        //   }} ,
         
     // image: {  // ✅ Ensure this is NOT an ObjectId
     //     url: String,
     //     filename: String
     // },
-    
+},
     price:
         Number,
     
