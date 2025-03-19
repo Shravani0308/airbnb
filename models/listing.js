@@ -15,7 +15,7 @@ const listingSchema = new mongoose.Schema({
         url:String,
         filename:String,
         // filename:{
-        
+
         //     type: String,
         // default:"listingimage"},
         // url:{type:String,
@@ -26,7 +26,7 @@ const listingSchema = new mongoose.Schema({
         //         ? "https://pixabay.com/photos/coast-landscape-nature-ocean-sea-1867704/"
         //         : v,
         //   }} ,
-        
+
     // image: {  // ✅ Ensure this is NOT an ObjectId
     //     url: String,
     //     filename: String
@@ -34,10 +34,10 @@ const listingSchema = new mongoose.Schema({
 },
     price:
         Number,
-    
+
     location:
         String,
-    
+
 
     country:
         String,
@@ -50,7 +50,23 @@ const listingSchema = new mongoose.Schema({
    owner:{
     type:Schema.Types.ObjectId,
     ref:"User",
-   } 
+   } ,
+   geometry: {
+    type:{
+    type: String,
+    enum: ['Point'],// 'location.type' must be 'point'
+    required: true
+    },
+  coordinates: {
+    type: [Number], // Array of arrays of arrays of numbers
+    required: true
+  },
+},
+category:{
+    type:String,
+    enum:["Trending", "Rooms", "Iconic Cities", "Mountains", "Castles", "Amazing Pools", "Camping", "Farms", "Arctic", "Domes"]
+
+}
 });
 
 listingSchema.post("findOneAndDelete",async(listing)=>{

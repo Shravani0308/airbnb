@@ -1,9 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-
-
-    <h3>All Listings</h3>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
         <% for(let listing of allListings) { %>
             <div class=" card col listing-card " >
                 <a href="/listings/<%= listing._id %>" class="text-decoration-none">
@@ -14,6 +10,7 @@
                             <p class="card-text" style="color: #222222;">
                                 <b><%= listing.title %></b> <br>
                                 &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %>/night
+                                <i>&nbsp; &nbsp;+18% GST</i>
                             </p>
                         </div>
                     </div>
