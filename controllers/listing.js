@@ -83,3 +83,12 @@ req.flash("success"," Listing Updated!");
  res.redirect(`/listings/${id}`);
  console.log(listing);
 };
+
+module.exports.destroyListing = async(req,res)=>{
+  let {id } = req.params;
+ let deletedListing = await Listing.findByIdAndDelete(id);
+ console.log(deletedListing);
+ req.flash("success", "Deleted Listing!")
+ res.redirect("/listings")
+ console.log(listing);
+}
